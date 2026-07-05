@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Resilio Foundation</title>
+  <meta name="description" content="Learn about Resilio Foundation: our story, vision, mission, and the core values that guide how we build resilience in young minds across Karnataka and India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ STICKY HEADER ══ -->
+<div class="site-header">
+
+  <!-- Mobile menu -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="closeMob()" aria-label="Close">✕</button>
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="about.html" onclick="closeMob()">About</a>
+    <a href="index.html#framework" onclick="closeMob()">Our Framework</a>
+    <a href="contact.html" onclick="closeMob()">Contact</a>
+    <img src="images/logo-badge.png" alt="The Resilio Foundation" style="width:82px;height:82px;margin:6px 0">
+    <a href="#" class="btn btn-primary" onclick="openModal('volModal');closeMob()">Join Us</a>
+  </div>
+
+  <!-- Nav -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo brand-lockup" aria-label="The Resilio Foundation home">
+        <img src="images/logo-badge.png" alt="The Resilio Foundation">
+        <span class="bl-name">Resilio<small>Foundation</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#framework">Our Framework</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" class="nav-cta" onclick="openModal('volModal');return false;">Join Us</a></li>
+      </ul>
+      <button class="nav-burger" onclick="document.getElementById('mobMenu').classList.add('open')" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+</div><!-- /site-header -->
+
+<!-- ══ PAGE HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>About Resilio Foundation</div>
+      <h1 class="hero-title">Building Strength <em>Before It's Needed.</em></h1>
+      <p class="hero-sub">Resilio Foundation exists to make sure no young person faces life's hardest moments without the skills, support, and community to move through them. We teach the emotional lessons that classrooms often leave out.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="openModal('volModal')">Volunteer With Us →</button>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="hero-card">
+        <img src="images/hero-classroom.jpg" alt="A mentor and young students working together in a supportive classroom">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OUR STORY ══ -->
+<section class="meaning" id="story">
+  <div class="inner">
+    <div class="meaning-grid">
+      <div class="reveal">
+        <div class="meaning-word">Resilio<span>From the idea of resilience</span></div>
+        <div class="meaning-pron">re·sil·io · /rɪˈzɪli.oʊ/</div>
+      </div>
+      <div class="meaning-text reveal d1">
+        <div class="sec-label">Our Story</div>
+        <p class="lead">We started with a simple observation: young people are rarely taught how to cope with the emotions life brings.</p>
+        <p>Rooted in Karnataka and built for India, Resilio Foundation designs prevention-first programmes that reach students, parents, educators, and whole communities.</p>
+        <p>Our aim is to catch silent struggles early, before they become crises, and to build the kind of <span class="accent">emotional strength</span> that lasts a lifetime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VISION & MISSION ══ -->
+<section class="vm">
+  <div class="inner">
+    <div class="sec-head c">
+      <div class="sec-label">What Drives Us</div>
+      <h2 class="sec-title">Vision &amp; <em>Mission</em></h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card vision reveal">
+        <div class="vm-icon">🌍</div>
+        <span class="vm-tag">Our Vision</span>
+        <h3>A world where every young person possesses the emotional skills, resilience, and support needed to thrive.</h3>
+      </div>
+      <div class="vm-card mission reveal d1">
+        <div class="vm-icon">🎯</div>
+        <span class="vm-tag">Our Mission</span>
+        <h3>To prevent silent struggles from becoming crises by equipping youth with emotional literacy, resilience, and supportive communities.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CORE VALUES ══ -->
+<section class="values">
+  <div class="inner">
+    <div class="sec-head c">
+      <div class="sec-label">What Guides Us</div>
+      <h2 class="sec-title">Our Core Values</h2>
+      <p class="sec-sub">Six commitments shape how we show up for every young person, family, and school we serve.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon" style="background:var(--sage-soft)">💚</div>
+        <h4>Empathy</h4>
+        <p>We listen before we respond.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <div class="value-icon" style="background:var(--rose-soft)">🕊️</div>
+        <h4>Dignity</h4>
+        <p>Every young person deserves respect and understanding.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <div class="value-icon" style="background:var(--oak-soft)">🌱</div>
+        <h4>Prevention</h4>
+        <p>Early support creates lasting impact.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon" style="background:var(--rose-light)">🤝</div>
+        <h4>Inclusion</h4>
+        <p>Mental wellbeing should be accessible to all.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <div class="value-icon" style="background:var(--sage-soft)">🔬</div>
+        <h4>Evidence-Based Practice</h4>
+        <p>We build programs grounded in research and best practices.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <div class="value-icon" style="background:var(--oak-soft)">✨</div>
+        <h4>Hope</h4>
+        <p>Positive change is always possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-chip">Join the Movement</div>
+    <h2>Help Us Build a <em>Resilient Generation.</em></h2>
+    <p>Whether you have time, expertise, or resources, there is a meaningful place for you at Resilio Foundation.</p>
+    <div class="cta-btns">
+      <button class="btn btn-primary" onclick="openModal('volModal')">Join Our Team</button>
+      <a href="contact.html" class="btn btn-outline">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-lockup">
+          <img src="images/logo-badge.png" alt="The Resilio Foundation">
+          <span class="bl-name">Resilio<small>Foundation</small></span>
+        </div>
+        <p>Equipping young people with emotional literacy, resilience, and supportive communities so they can face challenges and thrive.</p>
+        <div class="footer-tagline">"Resilience before it's needed."</div>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Instagram">ig</a>
+          <a href="#" title="YouTube">yt</a>
+          <a href="#" title="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Framework</h5>
+        <ul>
+          <li><a href="index.html#framework">Emotional Literacy</a></li>
+          <li><a href="index.html#framework">Psychological Resilience</a></li>
+          <li><a href="index.html#framework">Supportive Ecosystem</a></li>
+          <li><a href="index.html#framework">Early Intervention</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#" onclick="openModal('volModal');return false">Volunteer</a></li>
+          <li><a href="contact.html">Partner With Us</a></li>
+          <li><a href="index.html#advisory">Advisory Board</a></li>
+          <li><a href="contact.html">Donate</a></li>
+          <li><a href="contact.html">Corporate CSR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Organisation</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#change">How We Help</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" onclick="return false">Impact Reports</a></li>
+          <li><a href="#" onclick="return false">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Resilio Foundation. Registered NGO, Karnataka, India. &nbsp;|&nbsp; contact@resiliofoundation.in</span>
+      <span>Built with care for India's young minds</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ VOLUNTEER MODAL ══ -->
+<div class="modal-backdrop" id="volModal" onclick="handleBackdropClick(event,'volModal')">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <h3>Express Your Interest</h3>
+        <p>Join our movement. We will reach out within 3 business days.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('volModal')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="volForm" onsubmit="handleVolSubmit(event)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="Full Name" placeholder="e.g., Priya Sharma" required>
+          </div>
+          <div class="form-group">
+            <label>Age *</label>
+            <input type="number" name="Age" placeholder="e.g., 21" min="16" max="70" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="priya@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="Phone" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="form-group">
+          <label>Choose Your Background *</label>
+          <select name="Background" required>
+            <option value="">Select your background</option>
+            <option>Psychology Student</option>
+            <option>Medical Student</option>
+            <option>Social Work Student</option>
+            <option>Educator / Teacher</option>
+            <option>General College Student</option>
+            <option>Working Professional</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>What inspires you to join our resilience-building mission? *</label>
+          <textarea name="Motivation" placeholder="Tell us what draws you to building resilience in young people..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit My Interest &amp; Join Us →</button>
+      </form>
+      <div class="form-success" id="volSuccess">
+        Welcome to Resilio Foundation. We have received your expression of interest and will be in touch within 3 business days. Thank you for stepping forward for India's young minds.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT MODAL ══ -->
+<div class="modal-backdrop" id="contactModal" onclick="handleBackdropClick(event,'contactModal')">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <h3>Send Us a Message</h3>
+        <p>We read every message and reply within 2 to 3 business days.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('contactModal')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="contactForm" onsubmit="handleContactSubmit(event)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" name="Name" placeholder="Arjun Mehta" required>
+          </div>
+          <div class="form-group">
+            <label>Organisation</label>
+            <input type="text" name="Organisation" placeholder="Your school / company">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="arjun@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>I'm reaching out to...</label>
+          <select name="Reaching out to">
+            <option>Volunteer with Resilio Foundation</option>
+            <option>Partner as a School / College</option>
+            <option>Partner as a Healthcare Provider</option>
+            <option>Join the Advisory Board</option>
+            <option>Support / Donate</option>
+            <option>Corporate CSR Partnership</option>
+            <option>Media / Press Inquiry</option>
+            <option>Just learning more</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Message *</label>
+          <textarea name="Message" placeholder="Tell us a bit about yourself and how you would like to connect..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message →</button>
+      </form>
+      <div class="form-success" id="contactSuccess">
+        Your message has been sent. We will get back to you within 2 to 3 business days. Thank you for reaching out to Resilio Foundation.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
