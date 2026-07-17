@@ -644,16 +644,16 @@
       <button class="modal-close" onclick="closeModal('volModal')" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
-      <form id="volForm" onsubmit="handleVolSubmit(event)">
+      <form id="volForm" action="https://formspree.io/f/xzdneqoz" method="POST">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>Full Name *</label>
-            <input type="text" name="Full Name" placeholder="e.g., Priya Sharma" required>
+            <input type="text" name="full_name" placeholder="e.g., Priya Sharma" required>
           </div>
           <div class="form-group">
             <label>Age *</label>
-            <input type="number" name="Age" placeholder="e.g., 21" min="16" max="70" required>
+           <input type="number" name="age" placeholder="e.g., 21" min="16" max="70" required>
           </div>
         </div>
         <div class="form-group">
@@ -662,11 +662,11 @@
         </div>
         <div class="form-group">
           <label>Phone Number *</label>
-          <input type="tel" name="Phone" placeholder="+91 98765 43210" required>
+          <input type="tel" name="phone" placeholder="+91 98765 43210" required>
         </div>
         <div class="form-group">
           <label>Choose Your Background *</label>
-          <select name="Background" required>
+       <select name="background" required>
             <option value="">Select your background</option>
             <option>Psychology Student</option>
             <option>Medical Student</option>
@@ -679,8 +679,9 @@
         </div>
         <div class="form-group">
           <label>What inspires you to join our resilience-building mission? *</label>
-          <textarea name="Motivation" placeholder="Tell us what draws you to building resilience in young people..." required></textarea>
+          <textarea name="motivation" placeholder="Tell us what draws you to building resilience in young people..." required></textarea>
         </div>
+        <input type="hidden" name="_subject" value="New Volunteer Application - Resilio Foundation">
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit My Interest &amp; Join Us →</button>
       </form>
       <div class="form-success" id="volSuccess">
