@@ -114,9 +114,6 @@ async function submitForm(e, formId, successId, subject) {
   }
 }
 
-function handleVolSubmit(e) {
-  submitForm(e, "volForm", "volSuccess", "New Volunteer Interest — Resilio Foundation");
-}
 function handleContactSubmit(e) {
   submitForm(e, "contactForm", "contactSuccess", "New Contact Message — Resilio Foundation");
 }
