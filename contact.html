@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,22 @@
 <!-- ══ STICKY HEADER ══ -->
 <div class="site-header">
 
+  <!-- Notification bar -->
+  <div class="notif-bar" id="notifBar">
+    <span class="tag">📖 On the Blog</span>
+    <a href="blog-more-than-marks.html">More Than Marks: Redefining Success</a>
+    <span class="notif-sep">·</span>
+    <a href="blog-wellbeing-in-schools.html">Why Emotional Wellbeing Belongs in Every School</a>
+    <button class="notif-close" onclick="closeNotif()" aria-label="Dismiss">✕</button>
+  </div>
+
   <!-- Mobile menu -->
   <div class="mob-menu" id="mobMenu">
     <button class="mob-close" onclick="closeMob()" aria-label="Close">✕</button>
     <a href="index.html" onclick="closeMob()">Home</a>
     <a href="about.html" onclick="closeMob()">About</a>
     <a href="index.html#framework" onclick="closeMob()">Our Framework</a>
+    <a href="blog.html" onclick="closeMob()">Blog</a>
     <a href="contact.html" onclick="closeMob()">Contact</a>
     <img src="images/logo-badge.png" alt="The Resilio Foundation" style="width:82px;height:82px;margin:6px 0">
     <a href="#" class="btn btn-primary" onclick="openModal('volModal');closeMob()">Join Us</a>
@@ -37,6 +48,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#framework">Our Framework</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="#" class="nav-cta" onclick="openModal('volModal');return false;">Join Us</a></li>
       </ul>
@@ -70,7 +82,7 @@
         <div class="contact-items">
           <div class="contact-item">
             <div class="ci-icon">📧</div>
-            <span>Email <a href="mailto:contact@resiliofoundation.in">contact@resiliofoundation.in</a></span>
+            <span>Email <a href="mailto:resiliofoundation@gmail.com">resiliofoundation@gmail.com</a></span>
           </div>
           <div class="contact-item">
             <div class="ci-icon">📱</div>
@@ -93,8 +105,9 @@
       <div class="reveal d2">
         <div class="contact-cta-box" style="padding:38px">
           <div class="sec-label">Send a Message</div>
-          <form id="contactForm" onsubmit="handleContactSubmit(event)" style="width:100%">
-            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <form id="contactForm" action="https://formspree.io/f/xzdneqoz" method="POST" onsubmit="handleContactSubmit(event)" style="width:100%">
+        <input type="hidden" name="_subject" value="New Contact Message — Resilio Foundation">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
               <div class="form-group">
                 <label>Your Name *</label>
@@ -167,6 +180,7 @@
       <div class="footer-col">
         <h5>Get Involved</h5>
         <ul>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="#" onclick="openModal('volModal');return false">Volunteer</a></li>
           <li><a href="contact.html">Partner With Us</a></li>
           <li><a href="index.html#advisory">Advisory Board</a></li>
@@ -203,8 +217,9 @@
       <button class="modal-close" onclick="closeModal('volModal')" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
-      <form id="volForm" onsubmit="handleVolSubmit(event)">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <form id="volForm" action="https://formspree.io/f/xzdneqoz" method="POST" onsubmit="handleVolSubmit(event)">
+        <input type="hidden" name="_subject" value="New Volunteer Interest — Resilio Foundation">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>Full Name *</label>
