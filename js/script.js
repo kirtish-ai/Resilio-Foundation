@@ -6,6 +6,19 @@ window.addEventListener('scroll', () => {
 // Mobile menu
 function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
 
+// Notification bar dismiss (stays hidden for the rest of the browsing session)
+function closeNotif() {
+  const bar = document.getElementById('notifBar');
+  if (bar) bar.style.display = 'none';
+  try { sessionStorage.setItem('notifClosed', '1'); } catch (e) {}
+}
+if (window.sessionStorage && sessionStorage.getItem('notifClosed') === '1') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const bar = document.getElementById('notifBar');
+    if (bar) bar.style.display = 'none';
+  });
+}
+
 // Scroll reveal + counters
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -66,46 +79,34 @@ document.addEventListener('keydown', e => {
 });
 
 // ─────────────────────────────────────────────────────────────
-// FORM SUBMISSION → email via Web3Forms (https://web3forms.com)
-// STEP 1: Get your free access key at https://web3forms.com
-//         (enter kirtish1709@gmail.com, they email you a key).
-// STEP 2: Paste that key between the quotes below. That's it —
-//         both the volunteer and contact forms will start
-//         emailing kirtish1709@gmail.com.
+// FORM SUBMISSION → Formspree (https://formspree.io)
+// Each form posts to the URL in its own `action` attribute, so you
+// only manage the endpoint in the HTML. On success the form is
+// hidden and its success message is shown, without leaving the page.
+// (First time: submit once, then confirm the email Formspree sends
+//  you, so future submissions arrive automatically.)
 // ─────────────────────────────────────────────────────────────
-const WEB3FORMS_ACCESS_KEY = "PASTE-YOUR-ACCESS-KEY-HERE";
-
-async function submitForm(e, formId, successId, subject) {
+async function submitForm(e, formId, successId) {
   e.preventDefault();
   const form = document.getElementById(formId);
   const btn = form.querySelector('button[type="submit"]');
   const originalLabel = btn.innerHTML;
 
-  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.startsWith("PASTE")) {
-    alert("This form isn't connected yet. Add your Web3Forms access key in js/script.js.");
-    return;
-  }
-
   btn.disabled = true;
   btn.innerHTML = "Sending…";
 
-  const data = new FormData(form);
-  data.append("access_key", WEB3FORMS_ACCESS_KEY);
-  data.append("subject", subject);
-  data.append("from_name", "Resilio Foundation Website");
-
   try {
-    const res = await fetch("https://api.web3forms.com/submit", {
+    const res = await fetch(form.action, {
       method: "POST",
       headers: { Accept: "application/json" },
-      body: data
+      body: new FormData(form)
     });
-    const result = await res.json();
-    if (result.success) {
+    if (res.ok) {
       form.style.display = "none";
       document.getElementById(successId).style.display = "block";
     } else {
-      throw new Error(result.message || "Submission failed");
+      const result = await res.json().catch(() => ({}));
+      throw new Error((result.errors && result.errors[0] && result.errors[0].message) || "Submission failed");
     }
   } catch (err) {
     btn.disabled = false;
@@ -114,6 +115,9 @@ async function submitForm(e, formId, successId, subject) {
   }
 }
 
+function handleVolSubmit(e) {
+  submitForm(e, "volForm", "volSuccess");
+}
 function handleContactSubmit(e) {
-  submitForm(e, "contactForm", "contactSuccess", "New Contact Message — Resilio Foundation");
+  submitForm(e, "contactForm", "contactSuccess");
 }
