@@ -1,13 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Resilio Foundation | Building Resilience in India's Young Minds</title>
-
-<meta name="description" content="Resilio Foundation works to build resilience, emotional wellbeing, and mental health awareness among young people in India.">
-
-<meta name="keywords" content="Resilio Foundation, youth mental health, resilience building, India, volunteering">
-
-<meta name="robots" content="index, follow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resilio Foundation — Building Resilience in Young Minds</title>
@@ -17,10 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-  <meta property="og:title" content="Resilio Foundation">
-<meta property="og:description" content="Building resilience and emotional wellbeing among India's young minds.">
-<meta property="og:url" content="https://resiliofoundation.com">
-<meta property="og:type" content="website">
 </head>
 <body>
 
@@ -28,6 +18,14 @@
 <!-- ══ STICKY HEADER ══ -->
 <div class="site-header">
 
+  <!-- Notification bar -->
+  <div class="notif-bar" id="notifBar">
+    <span class="tag">📖 On the Blog</span>
+    <a href="blog-more-than-marks.html">More Than Marks: Redefining Success</a>
+    <span class="notif-sep">·</span>
+    <a href="blog-wellbeing-in-schools.html">Why Emotional Wellbeing Belongs in Every School</a>
+    <button class="notif-close" onclick="closeNotif()" aria-label="Dismiss">✕</button>
+  </div>
 
   <!-- Mobile menu -->
   <div class="mob-menu" id="mobMenu">
@@ -36,6 +34,7 @@
     <a href="about.html" onclick="closeMob()">About</a>
     <a href="#framework" onclick="closeMob()">Our Framework</a>
     <a href="#change" onclick="closeMob()">How We Help</a>
+    <a href="blog.html" onclick="closeMob()">Blog</a>
     <a href="contact.html" onclick="closeMob()">Contact</a>
     <img src="images/logo-badge.png" alt="The Resilio Foundation" style="width:82px;height:82px;margin:6px 0">
     <a href="#" class="btn btn-primary" onclick="openModal('volModal');closeMob()">Join Us</a>
@@ -53,6 +52,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="#framework">Our Framework</a></li>
         <li><a href="#change">How We Help</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="#" class="nav-cta" onclick="openModal('volModal');return false;">Join Us</a></li>
       </ul>
@@ -619,6 +619,7 @@
       <div class="footer-col">
         <h5>Get Involved</h5>
         <ul>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="#" onclick="openModal('volModal');return false">Volunteer</a></li>
           <li><a href="#" onclick="openModal('contactModal');return false">Partner With Us</a></li>
           <li><a href="#advisory">Advisory Board</a></li>
@@ -655,16 +656,17 @@
       <button class="modal-close" onclick="closeModal('volModal')" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
-      <form id="volForm" action="https://formspree.io/f/xzdneqoz" method="POST">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <form id="volForm" action="https://formspree.io/f/xzdneqoz" method="POST" onsubmit="handleVolSubmit(event)">
+        <input type="hidden" name="_subject" value="New Volunteer Interest — Resilio Foundation">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>Full Name *</label>
-            <input type="text" name="full_name" placeholder="e.g., Priya Sharma" required>
+            <input type="text" name="Full Name" placeholder="e.g., Priya Sharma" required>
           </div>
           <div class="form-group">
             <label>Age *</label>
-           <input type="number" name="age" placeholder="e.g., 21" min="16" max="70" required>
+            <input type="number" name="Age" placeholder="e.g., 21" min="16" max="70" required>
           </div>
         </div>
         <div class="form-group">
@@ -673,11 +675,11 @@
         </div>
         <div class="form-group">
           <label>Phone Number *</label>
-          <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+          <input type="tel" name="Phone" placeholder="+91 98765 43210" required>
         </div>
         <div class="form-group">
           <label>Choose Your Background *</label>
-       <select name="background" required>
+          <select name="Background" required>
             <option value="">Select your background</option>
             <option>Psychology Student</option>
             <option>Medical Student</option>
@@ -690,9 +692,8 @@
         </div>
         <div class="form-group">
           <label>What inspires you to join our resilience-building mission? *</label>
-          <textarea name="motivation" placeholder="Tell us what draws you to building resilience in young people..." required></textarea>
+          <textarea name="Motivation" placeholder="Tell us what draws you to building resilience in young people..." required></textarea>
         </div>
-        <input type="hidden" name="_subject" value="New Volunteer Application - Resilio Foundation">
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit My Interest &amp; Join Us →</button>
       </form>
       <div class="form-success" id="volSuccess">
@@ -713,8 +714,9 @@
       <button class="modal-close" onclick="closeModal('contactModal')" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
-      <form id="contactForm" onsubmit="handleContactSubmit(event)">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <form id="contactForm" action="https://formspree.io/f/xzdneqoz" method="POST" onsubmit="handleContactSubmit(event)">
+        <input type="hidden" name="_subject" value="New Contact Message — Resilio Foundation">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>Your Name *</label>
